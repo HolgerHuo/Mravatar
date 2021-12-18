@@ -27,8 +27,12 @@ https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club
         Force request latest avartar
     - `false`
         Use Mravatar cache (if exists). Cache is refreshed every 3h.
+- `default`
+    - `<url-encoded-img-url>`
+        Set fallback image url.
+        (Defaults to https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png)
 
-Example: `https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true`
+Example: `https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
 
 ![holgerhuo](https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
 

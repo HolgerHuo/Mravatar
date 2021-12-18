@@ -3,6 +3,7 @@ from requests_cache import CachedSession
 import requests_cache
 import json
 import re
+import requests
 
 app = Flask(__name__)
 
@@ -27,7 +28,10 @@ session = CachedSession(
 # /avatar/<user> entrypoint
 @app.route("/avatar/<user>")
 def req_avatar(user):
-    default_img_url = https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png
+    default_img_url = "https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png"
+
+    if request.args.get('default'):
+        default_img_url = requests.utils.unquote(request.args.get('default'))
 
     # Validate Username
     if re.search('@[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+',user):

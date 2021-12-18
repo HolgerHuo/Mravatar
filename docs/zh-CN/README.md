@@ -27,8 +27,12 @@ https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club
         强制拉取最新头像
     - `false`
         使用 Mravatar 缓存 (如果已经存在)。缓存每3小时更新一次。
+- `default`
+    - `<url编码过的图片地址>`
+        配置默认头像
+        (默认为 https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png)
 
-实例： `https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true`
+实例： `https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
 
 ![holgerhuo](https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
 
