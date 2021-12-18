@@ -27,6 +27,8 @@ session = CachedSession(
 # /avatar/<user> entrypoint
 @app.route("/avatar/<user>")
 def req_avatar(user):
+    default_img_url = https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png
+
     # Validate Username
     if re.search('@[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+',user):
         webfinger_url = "https://"+re.split('@',user[1:])[1]+"/.well-known/webfinger?resource=acct:"+user[1:]
@@ -34,20 +36,20 @@ def req_avatar(user):
         webfinger_url = "https://"+re.split('@',user)[1]+"/.well-known/webfinger?resource=acct:"+user
     else:
         app.logger.error("%s is invalid.", user)
-        return render_template('invalid.html', user=user), 400
+        return redirect(default_img_url, code=302)
     
     # Find account url
     try:
         webfinger = persistent.get(webfinger_url)
     except Exception as e:
         app.logger.error("%s is not accessable.", webfinger_url)
-        return render_template('inaccessible.html', url=webfinger_url), 400
+        return redirect(default_img_url, code=302)
     
     if webfinger.ok:
         user_url = json.loads(webfinger.text)['aliases'][1]+".json"
     else: 
         app.logger.error("%s is not accessable.", webfinger_url)
-        return render_template('inaccessible.html', url=webfinger_url), 400
+        return redirect(default_img_url, code=302)
 
     if request.args.get('no-cache') == 'true':
         requests_cache.backends.sqlite.SQLiteCache(db_path='cache').delete_url(user_url, method='GET')
@@ -57,16 +59,16 @@ def req_avatar(user):
         user_json = session.get(user_url)
     except Exception as e:
         app.logger.error("%s is not accessable.", user_url)
-        return render_template('inaccessible.html', url=user_url), 400
+        return redirect(default_img_url, code=302)
     
     if user_json.ok:
         if "icon" in json.loads(user_json.text):
             img_url = json.loads(user_json.text)['icon']['url']
         else:
-            img_url = "https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png"
+            img_url = default_img_url
     else:
         app.logger.error("%s is not accessable.", user_url)
-        return render_template('inaccessible.html', url=user_url), 400
+        return redirect(default_img_url, code=302)
     
     # Proxy Images
     if request.args.get('proxied') == 'true':
