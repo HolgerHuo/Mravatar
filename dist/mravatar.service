@@ -1,0 +1,13 @@
+[Unit]
+Description=Mravatar
+After=network.target
+
+[Service]
+User=mravatar
+Group=mravatar
+WorkingDirectory=/home/mravatar/mravatar
+Environment="PATH=/home/mravatar/mravatar/mravatar/bin"
+ExecStart=/home/mravatar/mravatar/mravatar/bin/uwsgi --ini config.ini
+
+[Install]
+WantedBy=multi-user.target
