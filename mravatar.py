@@ -79,10 +79,7 @@ def req_avatar(user):
         if request.args.get('no-cache') == 'true':
             requests_cache.backends.sqlite.SQLiteCache(db_path='cache').delete_url(img_url, method='GET')
         try: 
-            img_resp = session.get(
-                img_url, 
-                headers={'Accept': request.headers['Accept']}
-            )
+            img_resp = session.get(img_url)
         except Exception as e:
             app.logger.error("%s inaccessable.", img_url)
             return redirect(img_url, code=302)
