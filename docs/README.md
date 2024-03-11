@@ -9,11 +9,11 @@ This API provides you with avatar link or proxied avatar file through fediverse 
 ### /avatar/\<username\> (GET)
 
 ```
-https://mravatar.r669.live/avatar/@holgerhuo@dragon-fly.club
-https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club
+https://mravatar.dragoncloud.win/avatar/@holgerhuo@dragon-fly.club
+https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club
 ```
 
-`GET` request [https://mravatar.r669.live/avatar/@holgerhuo@dragon-fly.club](https://mravatar.r669.live/avatar/@holgerhuo@dragon-fly.club) or [https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club](https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club)
+`GET` request [https://mravatar.dragoncloud.win/avatar/@holgerhuo@dragon-fly.club](https://mravatar.dragoncloud.win/avatar/@holgerhuo@dragon-fly.club) or [https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club](https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club)
 
 #### Query Strings
 
@@ -32,9 +32,9 @@ https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club
         Set fallback image url.
         (Defaults to https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png)
 
-Example: `https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
+Example: `https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
 
-![holgerhuo](https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
+![holgerhuo](https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
 
 ## Deployment 
 

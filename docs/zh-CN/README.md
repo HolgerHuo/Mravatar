@@ -9,11 +9,11 @@ Mastodon头像API
 ### /avatar/\<username\> (GET)
 
 ```
-https://mravatar.r669.live/avatar/@holgerhuo@dragon-fly.club
-https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club
+https://mravatar.dragoncloud.win/avatar/@holgerhuo@dragon-fly.club
+https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club
 ```
 
-`GET`请求到[https://mravatar.r669.live/avatar/@holgerhuo@dragon-fly.club](https://mravatar.r669.live/avatar/@holgerhuo@dragon-fly.club) or [https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club](https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club)
+`GET`请求到[https://mravatar.dragoncloud.win/avatar/@holgerhuo@dragon-fly.club](https://mravatar.dragoncloud.win/avatar/@holgerhuo@dragon-fly.club) or [https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club](https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club)
 
 #### Query Strings
 
@@ -32,9 +32,9 @@ https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club
         配置默认头像
         (默认为 https://cdn.jsdelivr.net/gh/mastodon/mastodon@latest/public/avatars/original/missing.png)
 
-实例： `https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
+实例： `https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
 
-![holgerhuo](https://mravatar.r669.live/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
+![holgerhuo](https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
 
 ## 部署
 
