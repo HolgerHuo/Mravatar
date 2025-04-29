@@ -6,8 +6,8 @@ After=network.target
 User=mravatar
 Group=mravatar
 WorkingDirectory=/home/mravatar/mravatar
-Environment="PATH=/home/mravatar/mravatar/mravatar/bin"
-ExecStart=/home/mravatar/mravatar/mravatar/bin/uwsgi --ini config.ini
+Environment="PATH=/home/mravatar/.local/bin"
+ExecStart=/home/mravatar/.local/bin/gunicorn mravatar:app --bind 0.0.0.0:8000
 
 [Install]
 WantedBy=multi-user.target

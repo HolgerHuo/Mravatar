@@ -40,11 +40,7 @@ Example: `https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-c
 
 ### Dependencies
 
-**Mravatar requires `Python3.7+`, which means you'll have to compile Python3.7 yourself if you are on CentOS 7**
-
 Make sure you have `python3`, `pip3`, `python3-devel` and `virtualenv` installed.
-
-You also need `uWSGI` for the backend server. Feel free to use other backends.
 
 ### Procedures
 

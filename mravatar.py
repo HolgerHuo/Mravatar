@@ -1,4 +1,4 @@
-from flask import Flask, redirect, request, render_template, Response
+from flask import Flask, redirect, request, Response, send_file
 from requests_cache import CachedSession
 import requests_cache
 import json
@@ -93,3 +93,11 @@ def req_avatar(user):
 
     else:
         return redirect(img_url, code=302)
+
+@app.route('/')
+def serve_index():
+    return send_file('./docs/index.html')
+
+@app.route('/README.md')
+def serve_doc():
+    return send_file('./docs/README.md')

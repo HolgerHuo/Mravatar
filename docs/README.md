@@ -1,5 +1,7 @@
 # Mravatar - Mastodonwide Recognized Avatars
 
+![GitHub last commit](https://img.shields.io/github/last-commit/holgerhuo/mravatar)![GitHub release (latest by date)](https://img.shields.io/github/v/release/holgerhuo/mravatar)![GitHub](https://img.shields.io/github/license/holgerhuo/mravatar)![GitHub all releases](https://img.shields.io/github/downloads/holgerhuo/mravatar/total)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/holgerhuo/mravatar)
+
 A Mastodonwide Recognized Avatar API
 
 This API provides you with avatar link or proxied avatar file through fediverse account name (@username@localpart).
@@ -34,19 +36,11 @@ https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club
 
 Example: `https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true&default=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F48%2FMastodon_Logotype_%2528Simple%2529.svg`
 
-![holgerhuo](https://mravatar.dragoncloud.win/avatar/holgerhuo@dragon-fly.club?no-cache=true&proxied=true)
-
 ## Deployment 
-
-![GitHub last commit](https://img.shields.io/github/last-commit/holgerhuo/mravatar)![GitHub release (latest by date)](https://img.shields.io/github/v/release/holgerhuo/mravatar)![GitHub](https://img.shields.io/github/license/holgerhuo/mravatar)![GitHub all releases](https://img.shields.io/github/downloads/holgerhuo/mravatar/total)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/holgerhuo/mravatar)
 
 ### Dependencies
 
-**Mravatar requires `Python3.7+`, which means you'll have to compile Python3.7 yourself if you are on CentOS 7**
-
 Make sure you have `python3`, `pip3`, `python3-devel` and `virtualenv` installed.
-
-You also need `uWSGI` for the backend server. Feel free to use other backends.
 
 ### Procedures
 
