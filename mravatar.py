@@ -56,7 +56,7 @@ def req_avatar(user):
         return redirect(default_img_url, code=302)
 
     if request.args.get('no-cache') == 'true':
-        requests_cache.backends.sqlite.SQLiteCache(db_path='cache').delete_url(user_url, method='GET')
+        requests_cache.backends.sqlite.SQLiteCache(db_path='cache').delete(urls=[user_url])
         
     # Get User Info
     try:
@@ -77,7 +77,7 @@ def req_avatar(user):
     # Proxy Images
     if request.args.get('proxied') == 'true':
         if request.args.get('no-cache') == 'true':
-            requests_cache.backends.sqlite.SQLiteCache(db_path='cache').delete_url(img_url, method='GET')
+            requests_cache.backends.sqlite.SQLiteCache(db_path='cache').delete(urls=[img_url])
         try: 
             img_resp = session.get(img_url)
         except Exception as e:
