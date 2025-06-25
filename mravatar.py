@@ -1,4 +1,4 @@
-from flask import Flask, redirect, request, Response, send_file
+from flask import Flask, redirect, request, Response, send_file, jsonify
 from requests_cache import CachedSession
 import requests_cache
 import json
@@ -101,3 +101,7 @@ def serve_index():
 @app.route('/README.md')
 def serve_doc():
     return send_file('./docs/README.md')
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({'status': 'healthy'}), 200
