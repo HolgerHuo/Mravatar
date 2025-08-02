@@ -15,4 +15,5 @@ EXPOSE 8000
 HEALTHCHECK --interval=5m --timeout=3s \
   CMD wget --no-verbose http://[::1]:8000/health --spider || exit 1
 
-CMD ["/app/.local/bin/gunicorn", "--bind", "[::]:8000", "mravatar:app"]
+ENTRYPOINT ["/usr/local/bin/gunicorn"]
+CMD ["--bind", "[::]:8000", "mravatar:app"]
