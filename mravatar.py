@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Setup Requests Cache
 persistent = CachedSession(
     'persistent', 
-    backend=SQLiteCache('/tmp/persistent.sqlite'), 
+    backend=requests_cache.backends.sqlite.SQLiteCache('/tmp/persistent.sqlite'), 
     allowable_methods=['GET'],
     allowable_codes=[200],
     stale_if_error=True,
@@ -18,7 +18,7 @@ persistent = CachedSession(
 
 session = CachedSession(
     'cache', 
-    backend=SQLiteCache('/tmp/cache.sqlite'),
+    backend=requests_cache.backends.sqlite.SQLiteCache('/tmp/cache.sqlite'),
     expire_after=10800,
     allowable_methods=['GET'],
     allowable_codes=[200],
