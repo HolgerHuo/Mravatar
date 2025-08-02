@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Setup Requests Cache
 persistent = CachedSession(
     'persistent', 
-    backend='sqlite', 
+    backend=SQLiteCache('/tmp/persistent.sqlite'), 
     allowable_methods=['GET'],
     allowable_codes=[200],
     stale_if_error=True,
@@ -18,7 +18,7 @@ persistent = CachedSession(
 
 session = CachedSession(
     'cache', 
-    backend='sqlite',
+    backend=SQLiteCache('/tmp/cache.sqlite'),
     expire_after=10800,
     allowable_methods=['GET'],
     allowable_codes=[200],
@@ -56,7 +56,7 @@ def req_avatar(user):
         return redirect(default_img_url, code=302)
 
     if request.args.get('no-cache') == 'true':
-        requests_cache.backends.sqlite.SQLiteCache(db_path='cache', use_temp=True).delete(urls=[user_url])
+        requests_cache.backends.sqlite.SQLiteCache('/tmp/cache.sqlite').delete(urls=[user_url])
         
     # Get User Info
     try:
@@ -77,7 +77,7 @@ def req_avatar(user):
     # Proxy Images
     if request.args.get('proxied') == 'true':
         if request.args.get('no-cache') == 'true':
-            requests_cache.backends.sqlite.SQLiteCache(db_path='cache', use_temp=True).delete(urls=[img_url])
+            requests_cache.backends.sqlite.SQLiteCache('/tmp/cache.sqlite').delete(urls=[img_url])
         try: 
             img_resp = session.get(img_url)
         except Exception as e:
